@@ -54,10 +54,10 @@ download_PF_willow('datasets/')
 # Create model
 print('Creating CNN model...')
 if do_aff:
-    model_aff = CNNGeometric(use_cuda=use_cuda, geometric_model='affine',
+    model_aff = CNNGeometric(output_dim=6, use_cuda=use_cuda,# geometric_model='affine',
                              feature_extraction_cnn=args.feature_extraction_cnn)
 if do_tps:
-    model_tps = CNNGeometric(use_cuda=use_cuda, geometric_model='tps',
+    model_tps = CNNGeometric(output_dim=18,use_cuda=use_cuda,# geometric_model='tps',
                              feature_extraction_cnn=args.feature_extraction_cnn)
 
 # Load trained weights
@@ -75,7 +75,7 @@ if do_tps:
 
 # Dataset and dataloader
 dataset = PFDataset(csv_file=os.path.join(args.pf_path, 'test_pairs_pf.csv'),
-                    training_image_path=args.pf_path,
+                    dataset_path=args.pf_path,
                     transform=NormalizeImageDict(['source_image', 'target_image']))
 dataloader = DataLoader(dataset, batch_size=1,
                         shuffle=True, num_workers=4)
