@@ -30,6 +30,7 @@ class FeatureExtraction(torch.nn.Module):
                 last_layer = 'pool4'
             last_layer_idx = vgg_feature_layers.index(last_layer)
             self.model = nn.Sequential(*list(self.model.features.children())[:last_layer_idx+1])
+
         if feature_extraction_cnn == 'resnet101':
             self.model = models.resnet101(pretrained=True)
             resnet_feature_layers = ['conv1',
@@ -117,7 +118,7 @@ class FeatureCorrelation(torch.nn.Module):
             return torch.cat((feature_A,feature_B),1)
 
 class FeatureRegression(nn.Module):
-    def __init__(self, output_dim=6, use_cuda=True, batch_normalization=True, kernel_sizes=[7,5,5], channels=[225,128,64]):
+    def __init__(self, output_dim, use_cuda=True, batch_normalization=True, kernel_sizes=[7,5,5], channels=[225,128,64]):
         super(FeatureRegression, self).__init__()
         num_layers = len(kernel_sizes)
         nn_modules = list()
@@ -143,7 +144,7 @@ class FeatureRegression(nn.Module):
     
     
 class CNNGeometric(nn.Module):
-    def __init__(self, output_dim=6, 
+    def __init__(self, output_dim, 
                  feature_extraction_cnn='vgg', 
                  feature_extraction_last_layer='',
                  return_correlation=False,  
