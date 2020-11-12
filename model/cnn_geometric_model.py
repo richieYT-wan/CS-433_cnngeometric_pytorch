@@ -30,6 +30,7 @@ class FeatureExtraction(torch.nn.Module):
                 last_layer = 'pool4'
             last_layer_idx = vgg_feature_layers.index(last_layer)
             self.model = nn.Sequential(*list(self.model.features.children())[:last_layer_idx+1])
+
         if feature_extraction_cnn == 'resnet101':
             self.model = models.resnet101(pretrained=True)
             resnet_feature_layers = ['conv1',
