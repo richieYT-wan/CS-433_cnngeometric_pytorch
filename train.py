@@ -23,6 +23,9 @@ from util.train_test_fn import train, validate_model
 from util.torch_util import save_checkpoint, str_to_bool
 
 from options.options import ArgumentParser
+import warnings
+
+warnings.filterwarnings('ignore')
 
 
 """
