@@ -3,7 +3,6 @@ Adapted from https://github.com/ignacio-rocco/cnngeometric_pytorch, Rocco et al.
 **Author:**
 
 - Richie Yat-tsai Wan
-- Pedro Bedmar-Lopéz 
 
 ## Running the program 
 
