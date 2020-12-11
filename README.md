@@ -1,10 +1,9 @@
-# Machine Learning - Project 2: Advanced deep learning techniques for C. Elegans brain images
+Adapted from https://github.com/ignacio-rocco/cnngeometric_pytorch, Rocco et al. 2017
 
-**Authors:**
+**Author:**
 
 - Richie Yat-tsai Wan
-- Pedro Bedmar-López
-- Kevin Longlai Qiu
+- Pedro Bedmar-Lopéz 
 
 ## Running the program 
 
