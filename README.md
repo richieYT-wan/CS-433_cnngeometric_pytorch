@@ -6,7 +6,6 @@ Based on the [source code](https://github.com/ignacio-rocco/cnngeometric_pytorch
 
 - Richie Yat-tsai Wan
 - Pedro Bedmar-López
-- Kevin Longlai Qiu
 
 ## Getting started
 
